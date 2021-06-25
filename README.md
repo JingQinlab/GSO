@@ -12,10 +12,10 @@ Run GSO1.m via MATLAB.Then change the directory into folder Output/GSO1.
 Run the following command to score and rank the predicted TFs:  
 sh ../../Code/TFScoring.sh Hard
 
-Infer master TFs using GSO integrating transcriptomes and TF binding information: Code files (MaHardThr.m and GSO2.m) are in the folder Code. 
-Input files (A.txt, B.txt and InitialX.txt) are in the folder Input.
-Run GSO2.m via MATLAB. Then change the directory into folder Output/GSO2. 
-Run the following command to score and rank the predicted TFs:
+Infer master TFs using GSO integrating transcriptomes and TF binding information: Code files (MaHardThr.m and GSO2.m) are in the folder Code.  
+Input files (A.txt, B.txt and InitialX.txt) are in the folder Input.  
+Run GSO2.m via MATLAB. Then change the directory into folder Output/GSO2.  
+Run the following command to score and rank the predicted TFs:  
 sh ../../Code/TFScoring.sh Hard
 
 # Acknowledgements
