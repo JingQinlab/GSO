@@ -5,7 +5,7 @@ This study introduces a novel computational method predicting master transcripti
 
 The GSO source code, input and related OMICs data can be downloaded by clicking the hyperlinks on the left sidebar.
 
-# Usage
+# Usage for matlab
 Infer master TFs using group sparse optimization (GSO) integrating transcriptomes, TF binding and super-enhancer information: Code files (MaHardThr.m and GSO1.m) are in the folder Code.  
 Input files (A.txt, B.txt and InitialX_SuperEnh.txt) are in the folder Input.  
 Run GSO1.m via MATLAB.Then change the directory into folder Output/GSO1.  
