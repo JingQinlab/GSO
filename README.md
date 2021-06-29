@@ -73,14 +73,14 @@ The GSO source code, input and related OMICs data can be downloaded.
 
 1. Download the folder name code/R and install the R package
 
-2. devtools::install_local('GSO-master/code/R/GSO_0.99.6.zip')
+   devtools::install_local('GSO-master/code/R/GSO_0.99.6.zip')
 
-3. Once the R package is installed, please refer to the reference manual, e.g. inside R console type:
+2. Once the R package is installed, please refer to the reference manual, e.g. inside R console type:
 
    library(GSO)
 
    ?demo_GSO
-   
+
    ?TFScoring
 
 # Acknowledgements
