@@ -80,6 +80,7 @@ The GSO source code, input and related OMICs data can be downloaded.
    library(GSO)
 
    ?demo_GSO
+   
    ?TFScoring
 
 # Acknowledgements
