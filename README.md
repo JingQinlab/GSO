@@ -83,6 +83,25 @@ The GSO source code, input and related OMICs data can be downloaded.
 
    ?TFScoring
 
+## Output
+
+To score and rank the master TFs reported by GSO and group LASSO (gLASSO), we selected a series of group sparsity level K (i.e., the number of TF predicted as master TFs) from 1 to 20, and ran one GSO (or gLASSO) for each K. For each TF, we used Kmin to denote the smallest value of K when this TF is selected as master TF. We assumed that TFs selected by GSO are more important when K is smaller, so a TF got a higher score if its Kmin was smaller. 
+
+### For MATLAB
+
+1. The calculated results are in the Output folder.
+2. Folders GSO1, GSO2 and gLASSO are outputs from GSO1.m, GSO2.m, and gLASSO.m, respectively.
+3. In each output folder, folders s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s12, s14, s16, s18, s20 contain solution *X* of each *K* from 1 to 20. In each s*K* folder, XHard.txt or XSoft.txt are the solution matrix *X* derived from iterative hard thresholding algorithm or iterative soft thresholding algorithm, respectively.
+4. Hard_TFranking.txt or Soft_TFranking.txt  TF ranking after considering all *K*s. 
+
+### For R
+
+1. The calculated results are in the Output folder.
+2. In  Output folder, folders s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s12, s14, s16, s18, s20 contain solution *X* of each *K* from 1 to 20. In each s*K* folder, XHard.txt or XSoft.txt are the solution matrix *X* derived from iterative hard thresholding algorithm or iterative soft thresholding algorithm, respectively.
+3. Hard_TFranking.txt or Soft_TFranking.txt  TF ranking after considering all *K*s. 
+
+
+
 # Acknowledgements
 
 This work was supported by National Natural Science Foundation of China (41606143) awarded to JQ, research grants from Research Grants Council, Hong Kong (17121414M), startup funds from Mayo Clinic, USA (Mayo Clinic Arizona and Center for Individualized Medicine) to JW, National Natural Science Foundation of China (11871347), and Natural Science Foundation of Guangdong (2019A1515011917, 2020B1515310008) to YH, and National Science Council of Taiwan (MOST 102-2115-M-039-003-MY3) to JCY.
