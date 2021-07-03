@@ -26,43 +26,69 @@ The GSO source code, data, test data can be downloaded.
 #### GSO1 
 
 1. Before GSO1: 
+
    i. Prepare the code files (`MaHardThr.m` and `GSO1.m`) in the folder `Code`. 
+
    ii. Prepare the dataset (`A.txt`, `B.txt`, `TFlist.txt`, `DEGlist.txt` and `InitialX_SuperEnh.txt`) in the folder `Input`.
+
 2. Run GSO1.m in MATLAB.
+
 3. Evaluation
+
    i. Change the directory into folder `Output/GSO1`. 
+
    ii. Run the following command to score and rank the predicted TFs:
+
    ​       `sh ../../Code/TFScoring.sh Hard`
 
 #### GSO2 
 
 1. Before GSO2: 
+
    i. Prepare the code files (`MaHardThr.m` and `GSO2.m`) in the folder `Code`. 
+
    ii. Prepare the dataset (`A.txt`, `B.txt`, `TFlist.txt`, `DEGlist.txt` and `InitialX_SuperEnh.txt`) in the folder `Input`.
+
 2. Run GSO2.m in MATLAB.
+
 3. Evaluation
+
    i. Change the directory into folder `Output/GSO2`. 
+
    ii. Run the following command to score and rank the predicted TFs:
+
    ​       `sh ../../Code/TFScoring.sh Hard`
 
 #### gLASSO
 
 1. Before gLASSO:
+
    i. Prepare the code files (`MaHardThr.m` and `gLASSO.m`) in the folder `Code`. 
+
    ii. Prepare the dataset (`A.txt`, `B.txt`, `TFlist.txt`, `DEGlist.txt` and `InitialX_SuperEnh.txt`) in the folder `Input`.
+
 2. Run gLASSO.m in MATLAB.
+
 3. Evaluation
+
    i. Change the directory into folder `Output/gLASSO`. 
+
    ii. Run the following command to score and rank the predicted TFs:
+
    ​       `sh ../../Code/TFScoring.sh Hard`
 
 ### For R
 
 1. Download the folder name code/R and install the R package
+
    `devtools::install_github('JingQinlab/GSO/code/R/GSO')`
+
 2. Once the R package is installed, please refer to the reference manual, e.g. inside R console type:
+
    `library(GSO)`
+
    `?demo_GSO`
+
    `?TFScoring`
 
 ## Output
@@ -81,6 +107,8 @@ To score and rank the master TFs reported by GSO and group LASSO (gLASSO), we se
 1. The calculated results are in the Output folder.
 2. In  Output folder, folders s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s12, s14, s16, s18, s20 contain solution *X* of each *K* from 1 to 20. In each s*K* folder, XHard.txt or XSoft.txt are the solution matrix *X* derived from iterative hard thresholding algorithm or iterative soft thresholding algorithm, respectively.
 3. Hard_TFranking.txt or Soft_TFranking.txt  TF ranking after considering all *K*s. 
+
+
 
 # Acknowledgements
 
