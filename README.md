@@ -83,7 +83,7 @@ The GSO source code, data, test data can be downloaded.
 
    `install.package('devtools')`
 
-   `devtools::install_github('JingQinlab/GSO/code/R/GSO')`
+   `devtools::install_github('JingQinlab/GSO/code/R')`
 
 2. Once the R package is installed, please refer to the reference manual, e.g. inside R console type:
 
