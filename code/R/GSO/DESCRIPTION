@@ -1,0 +1,22 @@
+Package: GSO
+Title: Group Sparse Optimization for Gene Regulatory Network Inference
+Version: 0.99.6
+Authors@R: c(person("Xinlin", "Hu", role = c("aut", "cre"), 
+                    email = "thompson-xinlin.hu@connect.polyu.hk"), 
+             person("Yaohua", "Hu", role = c("ctb", "cph"), email = "mayhhu@szu.edu.cn"),
+             person("Jing", "Qin", role = c("ctb", "cph"), email = "qinj29@mail.sysu.edu.cn"))
+Maintainer: Xinlin Hu <thompson-xinlin.hu@connect.polyu.hk>
+Description: The package aims to infer gene regulatory network via group sparse optimization.
+License: GPL (>=2)
+Depends: R (>= 3.1.0)
+Encoding: UTF-8
+Imports: data.table, stringr, doParallel, foreach, parallel
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+NeedsCompilation: no
+Packaged: 2021-02-06 11:19:21 UTC; Thompson
+Author: Xinlin Hu [aut, cre],
+  Yaohua Hu [ctb, cph],
+  Jing Qin [ctb, cph]
+Built: R 4.0.2; ; 2021-06-30 11:08:21 UTC; windows

@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: demo_GSO - The demo of GSO package</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for demo_GSO {GSO}"><tr><td>demo_GSO {GSO}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>demo_GSO - The demo of GSO package</h2>
+
+<h3>Description</h3>
+
+<p>This is the main function to call algorithms: SoftThr, HalfThr and HardThr.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+demo_GSO(
+  A,
+  B,
+  InitialX,
+  algorithm,
+  sparSequence,
+  numCore = 2,
+  maxIter = 200,
+  path = "Output"
+)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>A</code></td>
+<td>
+<p>Gene expression data of transcriptome factors (i.e. feature matrix in machine learning).
+The dimension of A is nsample * ntf.</p>
+</td></tr>
+<tr valign="top"><td><code>B</code></td>
+<td>
+<p>Gene expression data of target genes (i.e. observation matrix in machine learning).
+The dimension of B is nsample * ngene.</p>
+</td></tr>
+<tr valign="top"><td><code>InitialX</code></td>
+<td>
+<p>Gene expression data of Chromatin immunoprecipitation or other matrix
+(i.e. initial iterative point in machine learning). The dimension of InitialX is ngene * ntf.</p>
+</td></tr>
+<tr valign="top"><td><code>algorithm</code></td>
+<td>
+<p>Three group sparse optimization algorithms: Soft, Half and Hard.</p>
+</td></tr>
+<tr valign="top"><td><code>sparSequence</code></td>
+<td>
+<p>Sequence of group sparsity level.</p>
+</td></tr>
+<tr valign="top"><td><code>numCore</code></td>
+<td>
+<p>Number of cores for computation.</p>
+</td></tr>
+<tr valign="top"><td><code>maxIter</code></td>
+<td>
+<p>Maximum iteration used in computation; default as 200.</p>
+</td></tr>
+<tr valign="top"><td><code>path</code></td>
+<td>
+<p>Output directory path.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p>The demo_GSO function is used to solve group sparse optimization problem via different algorithm.
+The SoftThr function aims to solve the problem:
+</p>
+<p style="text-align: center;"><i>\min \|Ax-b\|^2 + &lambda; \|x\|_{2,1}</i></p>
+
+<p>to obtain s-group sparse solution.
+</p>
+<p>The HalfThr function aims to solve the problem:
+</p>
+<p style="text-align: center;"><i>\min \|Ax-b\|^2 + &lambda; \|x\|_{2,\frac{1}{2}}</i></p>
+
+<p>to obtain s-group sparse solution.
+</p>
+<p>The HardThr function aims to solve the problem:
+</p>
+<p style="text-align: center;"><i>\min \|Ax-b\|^2 + &lambda; \|x\|_{2,0}</i></p>
+
+<p>to obtain s-group sparse solution.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Yaohua Hu <a href="mailto:mayhhu@szu.edu.cn">mayhhu@szu.edu.cn</a>
+</p>
+<p>Xinlin Hu <a href="mailto:thompson-xinlin.hu@connect.polyu.hk">thompson-xinlin.hu@connect.polyu.hk</a>
+</p>
+
+
+<h3>References</h3>
+
+<p>Y. Hu, C. Li, K. Meng, J. Qin and X. Yang*, Group sparse optimization via Lp,q regularization, Journal of Machine Learning Research, 18(30): 1-52, 2017.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+ntf &lt;- 30
+ngene &lt;- 300
+nsample &lt;- 20
+A &lt;- matrix(rnorm(ntf*nsample), nrow = nsample, ncol = ntf)
+B &lt;- matrix(rnorm(ngene*nsample), nrow = nsample, ncol = ngene)
+InitialX &lt;- matrix(rnorm(ntf*ngene), nrow = ngene, ncol = ntf)
+sparSeq &lt;- c(1:10,seq(10,20,2))
+algorithm &lt;- 'Hard'
+TFlist &lt;- paste0('G',1:ntf)
+resGSO &lt;- demo_GSO(A, B, InitialX, algorithm, sparSeq)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>GSO</em> version 0.99.6 <a href="00Index.html">Index</a>]</div>
+</body></html>
