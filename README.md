@@ -13,7 +13,7 @@ The GSO source code, data, test data can be downloaded.
 ## Input files needed to run GSO
 
 1. A.txt Matrix A: expression profiles of TFs in multiple samples (for bulk transcriptomes) or cells (for single-cell transcriptomes). It could be raw counts/RPKM/FPKM/TPM or log2-transformed gene expression fold changes between controls and treatments in TF perturbation experiments. Each column is the expression profile of one TF in all samples/cells/experiments. Each row is the expression profile of all TFs in one sample/cell/experiment.
-2.  B.txt Matrix B: expression profiles of differentially expressed genes (DEGs) in multiple samples (for bulk transcriptomes) or cells (for single-cell transcriptomes). It could be raw counts/RPKM/FPKM/TPM or log2-transformed gene expression fold changes between controls and TF perturbation experiments. Each column is the expression profile of DEG in all samples/cells/experiments. Each row is the expression profile of all DEGs in one sample/cell/experiment.
+2. B.txt Matrix B: expression profiles of differentially expressed genes (DEGs) in multiple samples (for bulk transcriptomes) or cells (for single-cell transcriptomes). It could be raw counts/RPKM/FPKM/TPM or log2-transformed gene expression fold changes between controls and TF perturbation experiments. Each column is the expression profile of DEG in all samples/cells/experiments. Each row is the expression profile of all DEGs in one sample/cell/experiment.
 3. InitialX.txt Initial matrix X describes the connections between TFs and DEGs, the TF-DEG connections defined by ChIP-seq/chip data were converted into an initial matrix. Each row is the transcriptome profile between DEG with all TFs. Each column is the transcriptome profile between TF with all DEGs. If TF i has binding site (BS) around the DEG j promoter within 10 kbp, the Pearson correlation coefficient (PCC) between the expression profiles of TF i and DEG j was calculated and assigned on Xi,j.
 4. InitialX_SuperEnh.txt Initial matrix X describes the connections between TFs and DEGs, the TF-DEG connections defined by ChIP-seq/chip data were converted into an initial matrix. Each row is the transcriptome profile between DEG with all TFs. Each column is the transcriptome profile between TF with all DEGs. If TF i has binding site (BS) around the DEG j promoter within 10 kbp, the Pearson correlation coefficient (PCC) between the expression profiles of TF i and DEG j was calculated and assigned on Xi,j. Super-enhancer regions were used to filter the TFBSs. When a TFBS is outside super-enhancer regions, the Xi,j defined by this TFBS was reset as 0.
 5. TFlistL.txt List of TFs in transcriptome datasets. The order of the TFs are the same as the column name in Matrix A, initial X and solution matrix.
@@ -80,6 +80,8 @@ The GSO source code, data, test data can be downloaded.
 ### For R
 
 1. Download the folder name code/R and install the R package
+
+   `install.package('devtools')`
 
    `devtools::install_github('JingQinlab/GSO/code/R/GSO')`
 
